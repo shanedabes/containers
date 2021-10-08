@@ -10,7 +10,7 @@ RUN git checkout v0.2.1 && \
 
 COPY entrypoint.sh /build/app/entrypoint.sh
 
-FROM alpine:3.13.6
+FROM alpine:3.14.2
 RUN apk add --no-cache bash ca-certificates openssl
 WORKDIR /app
 COPY --from=build-env /build/ /
