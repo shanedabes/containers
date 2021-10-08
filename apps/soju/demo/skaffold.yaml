@@ -1,0 +1,17 @@
+---
+apiVersion: skaffold/v2beta16
+kind: Config
+build:
+  artifacts:
+    - image: soju
+      context: ./..
+      docker:
+        dockerfile: Dockerfile
+    - image: tiny
+      context: .
+      docker:
+        dockerfile: tiny.Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - "kube/*"
