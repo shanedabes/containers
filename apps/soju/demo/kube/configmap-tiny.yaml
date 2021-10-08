@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tiny-config
+data:
+  tiny.yml: |
+    ---
+    servers:
+      - addr: soju
+        port: 6667
+        realname: shane
+        nicks: [shane]
+        sasl:
+          username: shane
+          password: password1
+
+      - addr: soju2
+        port: 6667
+        realname: gowon
+        nicks: [gowon]
+        sasl:
+          username: gowon
+          password: password2
+
+    defaults:
+      nicks: [shane]
+      realname: shane
+      join: []
+      tls: false
