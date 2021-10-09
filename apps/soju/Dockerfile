@@ -1,10 +1,12 @@
 FROM golang:alpine AS build-env
 
+ARG VERSION
+
 RUN apk add --no-cache gcc libc-dev git curl && \
     mkdir -p /build/app /build/config && \
-    curl -fsSL https://github.com/emersion/soju/releases/download/v0.2.2/soju-0.2.2.tar.gz | tar -xz
+    curl -fsSL https://github.com/emersion/soju/releases/download/v${VERSION}/soju-${VERSION}.tar.gz | tar -xz
 
-WORKDIR /go/soju-0.2.2
+WORKDIR /go/soju-${VERSION}
 RUN go build -o /build/app/soju cmd/soju/main.go && \
     go build -o /build/app/sojuctl cmd/sojuctl/main.go
 
