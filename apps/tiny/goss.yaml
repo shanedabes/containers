@@ -1,0 +1,5 @@
+---
+file:
+  /tiny:
+    exists: true
+    mode: "0755"
