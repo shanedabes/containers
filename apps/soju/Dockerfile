@@ -13,7 +13,7 @@ RUN go build -o /build/app/soju cmd/soju/main.go && \
 
 COPY ./apps/soju/entrypoint.sh /build/app/entrypoint.sh
 
-FROM alpine:3.14.2
+FROM alpine:3.15.2
 RUN apk add --no-cache bash=5.1.16-r0 ca-certificates=20191127-r5 openssl=1.1.1l-r0
 WORKDIR /app
 COPY --from=build-env /build/ /
