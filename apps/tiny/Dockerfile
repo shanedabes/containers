@@ -1,4 +1,4 @@
-FROM rust:1.60.0 as build
+FROM rust:1.71.1 as build
 
 ARG VERSION
 
